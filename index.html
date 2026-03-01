@@ -1,29 +1,177 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Myrpi Portfolio</title>
   <style>
-    body { font-family: sans-serif; max-width: 800px; margin: auto; padding: 20px; }
-    h1 { color: darkblue; }
-    a { color: darkred; text-decoration: none; }
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #0f172a;
+      color: #e5e7eb;
+    }
+
+    .wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 16px 48px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 2.2rem;
+      color: #f9fafb;
+    }
+
+    .tagline {
+      margin: 0;
+      color: #9ca3af;
+      font-size: 0.98rem;
+    }
+
+    h2 {
+      margin-top: 32px;
+      margin-bottom: 16px;
+      font-size: 1.4rem;
+      color: #38bdf8;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .card {
+      background: #020617;
+      border-radius: 12px;
+      padding: 16px 18px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+      border-color: #38bdf8;
+    }
+
+    .card-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #e5e7eb;
+    }
+
+    .card-meta {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-bottom: 10px;
+    }
+
+    .card a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .card a::after {
+      content: "↗";
+      font-size: 0.8rem;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    .about {
+      margin-top: 36px;
+      padding: 20px 18px;
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 12px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .about strong {
+      color: #e5e7eb;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper {
+        padding: 24px 16px 32px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.25rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>Myrpi – My Creations</h1>
+  <div class="wrapper">
+    <header>
+      <h1>Myrpi – My Creations</h1>
+      <p class="tagline">Small games, 3D experiments, and projects I build while learning.</p>
+    </header>
 
-  <h2>🎮 Games</h2>
-  <ul>
-    <li><a href="https://storage.googleapis.com/rezona-ai-prod/minigame/85748bce-80da-4f83-a91f-8d1dbdec245a/index.html">memory game 1 (Renova)</a></li>
-  </ul>
-  <ul>
-    <li><a href="https://storage.googleapis.com/rezona-ai-prod/user_upload/game/version/latest-1a7c8ec3-563e-4cac-99e5-e1d403e99874.html">the train game 2 (Renova)</a></li>   </ul>
-  </ul>
-  <h2>🧊 3D Models</h2>
-  <ul>
-    <li><a href="https://link-to-your-blender-project">Blender Project</a></li>
-  </ul>
+    <section>
+      <h2>🎮 Games</h2>
+      <ul class="cards">
+        <li class="card">
+          <div class="card-title">Memory Game 1 (Renova)</div>
+          <div class="card-meta">Browser game · Memory / matching</div>
+          <a href="https://storage.googleapis.com/rezona-ai-prod/minigame/85748bce-80da-4f83-a91f-8d1dbdec245a/index.html" target="_blank" rel="noopener">
+            Play game
+          </a>
+        </li>
 
-  <h2>About Me</h2>
-  <p>I love creating games, 3D models, and experimenting with projects. I am learning new skills every day!</p>
+        <li class="card">
+          <div class="card-title">The Train Game 2 (Renova)</div>
+          <div class="card-meta">Browser game · Puzzle / logic</div>
+          <a href="https://storage.googleapis.com/rezona-ai-prod/user_upload/game/version/latest-1a7c8ec3-563e-4cac-99e5-e1d403e99874.html" target="_blank" rel="noopener">
+            Play game
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🧊 3D Models</h2>
+      <ul class="cards">
+        <li class="card">
+          <div class="card-title">Blender Project</div>
+          <div class="card-meta">3D model · Blender</div>
+          <a href="https://link-to-your-blender-project" target="_blank" rel="noopener">
+            View model
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="about">
+      <p><strong>About me.</strong> I love creating games, 3D models, and experimenting with different ideas. I am learning new tools and improving my skills step by step.</p>
+    </section>
+  </div>
 </body>
-</html>
+  </html>
