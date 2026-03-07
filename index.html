@@ -114,6 +114,7 @@
       border-radius: 6px;
       border: 2px solid rgba(56, 189, 248, 0.3);
       transition: transform 0.2s ease;
+      cursor: pointer;
     }
 
     .preview-gallery img:hover {
@@ -139,7 +140,7 @@
       background: rgba(56, 189, 248, 0.2);
       border-color: #38bdf8;
     }
-    
+
     .about {
       margin-top: 36px;
       padding: 20px 18px;
@@ -148,6 +149,33 @@
       border: 1px solid rgba(148, 163, 184, 0.35);
       line-height: 1.6;
       font-size: 0.95rem;
+    }
+
+    /* Lightbox / modal */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 8px;
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 16px;
+      right: 20px;
+      font-size: 2rem;
+      color: #fff;
+      cursor: pointer;
+      user-select: none;
     }
 
     @media (max-width: 600px) {
@@ -182,7 +210,7 @@
             Version 1
           </a>
           <a href="https://link-to-the-second-version-of-the-train-game" target="_blank" rel="noopener">
-          Version 2
+            Version 2
           </a>
         </li>
       </ul>
@@ -194,8 +222,7 @@
         <li class="card">
           <div class="card-title">Blender Project</div>
           <div class="card-meta">3D model · Blender</div>
-          <div class="preview-gallery">
-            <!-- Preview images 13,17,18,22,28 (smaller size) -->
+          <div class="preview-gallery gallery">
             <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0013.jpg" alt="Blender preview 13">
             <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0017.jpg" alt="Blender preview 17">
             <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0018.jpg" alt="Blender preview 18">
@@ -206,13 +233,22 @@
         </li>
       </ul>
     </section>
-        <section>
-      <h2>Drawings</h2>
+
+    <section>
+      <h2>✏️ Drawings</h2>
       <ul class="cards">
         <li class="card">
-          <div class="card-title">Projects</div>
-          <div class="card-meta"></div>
-         
+          <div class="card-title">Drawing Projects</div>
+          <div class="card-meta">Sketches and illustrations</div>
+          <div class="preview-gallery gallery">
+            <!-- Previews: 2(1), 6, 8, 11, 17 -->
+            <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0002(1).jpg" alt="Drawing 2(1)">
+            <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0006.jpg" alt="Drawing 6">
+            <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0008.jpg" alt="Drawing 8">
+            <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0011.jpg" alt="Drawing 11">
+            <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0017.jpg" alt="Drawing 17">
+          </div>
+          <a href="drawings.html" class="see-all-link">See all drawings →</a>
         </li>
       </ul>
     </section>
@@ -221,5 +257,43 @@
       <p><strong>About me.</strong> I love creating games, 3D models, and experimenting with different ideas. I am learning new tools and improving my skills step by step.</p>
     </section>
   </div>
+
+  <!-- Lightbox / modal shared by all galleries -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    // Simple lightbox: works for any image inside elements with class "gallery"
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    document.addEventListener('click', function (e) {
+      const target = e.target;
+      if (target.tagName === 'IMG' && target.closest('.gallery')) {
+        lightboxImg.src = target.src;
+        lightboxImg.alt = target.alt;
+        lightbox.style.display = 'flex';
+      }
+    });
+
+    lightboxClose.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        lightbox.style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
