@@ -59,6 +59,7 @@
       box-shadow: 0 12px 30px rgba(15, 23, 42, 0.7);
       border: 1px solid rgba(148, 163, 184, 0.25);
       transition: all 0.2s ease;
+      cursor: pointer;
     }
     .gallery-item:hover {
       transform: translateY(-4px);
@@ -71,6 +72,32 @@
       object-fit: cover;
       border-radius: 8px;
     }
+
+    /* Lightbox styles */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 8px;
+    }
+    .lightbox-close {
+      position: fixed;
+      top: 16px;
+      right: 20px;
+      font-size: 2rem;
+      color: #fff;
+      cursor: pointer;
+      user-select: none;
+    }
+
     @media (max-width: 600px) {
       .wrapper { padding: 24px 16px; }
       h1 { font-size: 1.8rem; }
@@ -81,34 +108,67 @@
 <body>
   <div class="wrapper">
     <header>
-      <h1>🎨Drawings Project - Full Gallery</h1>
+      <h1>🎨 Drawings Project - Full Gallery</h1>
       <nav>
         <a href="index.html">← Back to Portfolio</a>
       </nav>
     </header>
     
     <ul class="gallery">
-      <!-- All images 2(1) 6,8-12, 14-21 -->
-      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0002(1).jpg" alt="drawing 1"></li>
-      
-      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0006.jpg" alt="drawing 3"></li>
-      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0018.jpg" alt="drawing image 13"></li>
-      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0019.jpg" alt="drawing image 14"></li>
-    
-      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0020.jpg" alt="Blendege 15"></li>
-      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0021.jpg" alt="drawing 16"></li>
-      
-      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0008.jpg" alt="Blender image 4"></li>
-      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0009.jpg" alt="Blender image 5"></li>
-      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0010.jpg" alt="Blender image 6"></li>
-      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0011.jpg" alt="Blender image 7"></li>
-      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0012.jpg" alt="drawing 8"></li>
-      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0014.jpg" alt=" drawing 9"></li>
-      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0015.jpg" alt="drawing 10"></li>
-      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0016.jpg" alt="drawing 11"></li>
-      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0017.jpg" alt="drawing image 12"></li>
-      
+      <!-- All drawing images in order -->
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0002(1).jpg" alt="Drawing 1"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0006.jpg" alt="Drawing 2"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0008.jpg" alt="Drawing 3"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0009.jpg" alt="Drawing 4"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0010.jpg" alt="Drawing 5"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0011.jpg" alt="Drawing 6"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0012.jpg" alt="Drawing 7"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0014.jpg" alt="Drawing 8"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0015.jpg" alt="Drawing 9"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0016.jpg" alt="Drawing 10"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307WA0017.jpg" alt="Drawing 11"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0018.jpg" alt="Drawing 12"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0019.jpg" alt="Drawing 13"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0020.jpg" alt="Drawing 14"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0021.jpg" alt="Drawing 15"></li>
     </ul>
   </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    document.addEventListener('click', function (e) {
+      const target = e.target;
+      if (target.tagName === 'IMG' && target.closest('.gallery')) {
+        lightboxImg.src = target.src;
+        lightboxImg.alt = target.alt;
+        lightbox.style.display = 'flex';
+      }
+    });
+
+    lightboxClose.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        lightbox.style.display = 'none';
+      }
+    });
+  </script>
 </body>
-        </html>
+</html>
