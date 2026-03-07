@@ -1,93 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Images - Your Site Name</title>
-    <!-- Copy your CSS link from index.html here -->
-    <link rel="stylesheet" href="styles.css">  <!-- If you have a shared CSS file -->
-    <style>
-        /* Paste or adapt your CSS from index.html here for self-contained styling */
-        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f4f4f4; }
-        header { background: #333; color: white; padding: 1rem; text-align: center; }
-        nav { margin: 1rem 0; }
-        nav a { margin: 0 15px; color: #333; text-decoration: none; }
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .gallery img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-    </style>
+  <meta charset="UTF-8">
+  <title>Blender Project - Full Gallery | Violetta Portfolio</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #0f172a;
+      color: #e5e7eb;
+    }
+    .wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 16px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    h1 {
+      font-size: 2.2rem;
+      color: #f9fafb;
+      margin: 0 0 8px;
+    }
+    nav {
+      margin-bottom: 24px;
+    }
+    nav a {
+      display: inline-block;
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 8px 16px;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 6px;
+      margin: 0 4px;
+    }
+    nav a:hover {
+      background: rgba(56, 189, 248, 0.2);
+      border-color: #38bdf8;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .gallery-item {
+      background: #020617;
+      border-radius: 12px;
+      padding: 12px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      transition: all 0.2s ease;
+    }
+    .gallery-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+      border-color: #38bdf8;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    @media (max-width: 600px) {
+      .wrapper { padding: 24px 16px; }
+      h1 { font-size: 1.8rem; }
+      .gallery { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    }
+  </style>
 </head>
 <body>
+  <div class="wrapper">
     <header>
-        <h1>Your Images Section</h1>
-        <nav>
-            <a <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0000.jpg" alt="IMG-20260302-WA0000.jpg" >
-            <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0001.jpg" alt="IMG-20260302-WA0000.jpg" width="300"  height="200">
-            <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0002.jpg" alt="IMG-20260302-WA0000.jpg" width="300"  height="200">
-              <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0003.jpg" alt="IMG-20260302-WA0003.jpg" width="300"  height="200">
-            <a/>
-                 <a    <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0004.jpg" alt="IMG-20260302-WA0004.jpg" width="300"  height="200">
-                    <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0005.jpg" alt="IMG-20260302-WA0005.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0006.jpg" alt="IMG-20260302-WA0006.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0007.jpg" alt="IMG-20260302-WA0007.jpg" width="300"  height="200">
-             <a/>
-           <a <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0008.jpg" alt="IMG-20260302-WA0008.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0009.jpg" alt="IMG-20260302-WA0009.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0010.jpg" alt="IMG-20260302-WA0010.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0011.jpg" alt="IMG-20260302-WA0011.jpg" width="300"  height="200">
-           <a/> <a
-            <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0012.jpg" alt="IMG-20260302-WA0012.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0013.jpg" alt="IMG-20260302-WA0013.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0014.jpg" alt="IMG-20260302-WA0014.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0015.jpg" alt="IMG-20260302-WA0015.jpg" width="300"  height="200">
-            <a/>
-              <a
-            <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0016.jpg" alt="IMG-20260302-WA0016.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0017.jpg" alt="IMG-20260302-WA0017.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0018.jpg" alt="IMG-20260302-WA0018.jpg" width="300"  height="200">
-                  <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0019.jpg" alt="IMG-20260302-WA0019.jpg" width="300"  height="200">
-           <a/>
-             <a
-            <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0020.jpg" alt="IMG-20260302-WA0020.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0021.jpg" alt="IMG-20260302-WA0021.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0022.jpg" alt="IMG-20260302-WA0022.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0023.jpg" alt="IMG-20260302-WA0023.jpg" width="300"  height="200">
-            <a/>
-              <a
-            <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0024.jpg" alt="IMG-20260302-WA0024.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0025.jpg" alt="IMG-20260302-WA0025.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0026.jpg" alt="IMG-20260302-WA0026.jpg" width="300"  height="200">
-                  <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0027.jpg" alt="IMG-20260302-WA0027.jpg" width="300"  height="200">
-           <a/>
-             <a
-            <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0028.jpg" alt="IMG-20260302-WA0028.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0029.jpg" alt="IMG-20260302-WA0029.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0030.jpg" alt="IMG-20260302-WA0030.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0031.jpg" alt="IMG-20260302-WA0031.jpg" width="300"  height="200">
-           <a/>
-             <a
-            <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0032.jpg" alt="IMG-20260302-WA0032.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0033.jpg" alt="IMG-20260302-WA0033.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0034.jpg" alt="IMG-20260302-WA0034.jpg" width="300"  height="200">
-        
-          
-          </a>
-            <a href="images.html">Images</a>  <!-- Current page -->
-            <!-- Add more nav links as needed -->
-        </nav>
+      <h1>🧊 Blender Project - Full Gallery</h1>
+      <nav>
+        <a href="index.html">← Back to Portfolio</a>
+      </nav>
     </header>
     
-    <main>
-        <section class="gallery">
-            <!-- Replace with your actual images -->
-            <img src="images/photo1.jpg" alt="Description of photo 1">
-            <img src="images/photo2.jpg" alt="Description of photo 2">
-            <img src="images/photo3.jpg" alt="Description of photo 3">
-            <!-- Add more <img> tags here -->
-        </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2026 Your Name. Hosted on GitHub Pages.</p>
-    </footer>
+    <ul class="gallery">
+      <!-- All images 0-28 (excluding 29-34) -->
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0000.jpg" alt="Blender image 0"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0001.jpg" alt="Blender image 1"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0002.jpg" alt="Blender image 2"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0003.jpg" alt="Blender image 3"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0004.jpg" alt="Blender image 4"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0005.jpg" alt="Blender image 5"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0006.jpg" alt="Blender image 6"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0007.jpg" alt="Blender image 7"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0008.jpg" alt="Blender image 8"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0009.jpg" alt="Blender image 9"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0010.jpg" alt="Blender image 10"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0011.jpg" alt="Blender image 11"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0012.jpg" alt="Blender image 12"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0013.jpg" alt="Blender image 13"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0014.jpg" alt="Blender image 14"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0015.jpg" alt="Blender image 15"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0016.jpg" alt="Blender image 16"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0017.jpg" alt="Blender image 17"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0018.jpg" alt="Blender image 18"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0019.jpg" alt="Blender image 19"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0020.jpg" alt="Blender image 20"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0021.jpg" alt="Blender image 21"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0022.jpg" alt="Blender image 22"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0023.jpg" alt="Blender image 23"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0024.jpg" alt="Blender image 24"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0025.jpg" alt="Blender image 25"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0026.jpg" alt="Blender image 26"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0027.jpg" alt="Blender image 27"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0028.jpg" alt="Blender image 28"></li>
+    </ul>
+  </div>
 </body>
 </html>
