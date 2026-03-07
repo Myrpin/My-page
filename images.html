@@ -59,6 +59,7 @@
       box-shadow: 0 12px 30px rgba(15, 23, 42, 0.7);
       border: 1px solid rgba(148, 163, 184, 0.25);
       transition: all 0.2s ease;
+      cursor: pointer;
     }
     .gallery-item:hover {
       transform: translateY(-4px);
@@ -71,6 +72,32 @@
       object-fit: cover;
       border-radius: 8px;
     }
+
+    /* Lightbox styles */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 8px;
+    }
+    .lightbox-close {
+      position: fixed;
+      top: 16px;
+      right: 20px;
+      font-size: 2rem;
+      color: #fff;
+      cursor: pointer;
+      user-select: none;
+    }
+
     @media (max-width: 600px) {
       .wrapper { padding: 24px 16px; }
       h1 { font-size: 1.8rem; }
@@ -103,8 +130,7 @@
       <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0011.jpg" alt="Blender image 11"></li>
       <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0012.jpg" alt="Blender image 12"></li>
       <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0013.jpg" alt="Blender image 13"></li>
-    
-      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0015.jpg" alt="Blendege 15"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0015.jpg" alt="Blender image 15"></li>
       <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0016.jpg" alt="Blender image 16"></li>
       <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0017.jpg" alt="Blender image 17"></li>
       <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0018.jpg" alt="Blender image 18"></li>
@@ -113,13 +139,50 @@
       <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0021.jpg" alt="Blender image 21"></li>
       <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0022.jpg" alt="Blender image 22"></li>
       <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0023.jpg" alt="Blender image 23"></li>
-      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0013.jpg" alt="Blender image "></li>
-      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0024.jpg" alt="Blender image 24"></li>
-      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0025.jpg" alt="Blender image 25"></li>
-      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0026.jpg" alt="Blender image 26"></li>
-      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0027.jpg" alt="Blender image 27"></li>
-      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0028.jpg" alt="Blender image 28"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260307-WA0013.jpg" alt="Blender image 24"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0024.jpg" alt="Blender image 25"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0025.jpg" alt="Blender image 26"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0026.jpg" alt="Blender image 27"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0027.jpg" alt="Blender image 28"></li>
+      <li class="gallery-item"><img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0028.jpg" alt="Blender image 29"></li>
     </ul>
   </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    document.addEventListener('click', function (e) {
+      const target = e.target;
+      if (target.tagName === 'IMG' && target.closest('.gallery')) {
+        lightboxImg.src = target.src;
+        lightboxImg.alt = target.alt;
+        lightbox.style.display = 'flex';
+      }
+    });
+
+    lightboxClose.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        lightbox.style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
