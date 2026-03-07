@@ -99,6 +99,47 @@
       text-decoration: underline;
     }
 
+    /* Preview gallery styles */
+    .preview-gallery {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .preview-gallery img {
+      width: 80px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 2px solid rgba(56, 189, 248, 0.3);
+      transition: transform 0.2s ease;
+    }
+
+    .preview-gallery img:hover {
+      transform: scale(1.05);
+      border-color: #38bdf8;
+    }
+
+    .see-all-link {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 8px 16px;
+      background: rgba(56, 189, 248, 0.1);
+      color: #38bdf8;
+      text-decoration: none;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .see-all-link:hover {
+      background: rgba(56, 189, 248, 0.2);
+      border-color: #38bdf8;
+    }
+    
     .about {
       margin-top: 36px;
       padding: 20px 18px;
@@ -109,22 +150,11 @@
       font-size: 0.95rem;
     }
 
-    .about strong {
-      color: #e5e7eb;
-    }
-
     @media (max-width: 600px) {
-      .wrapper {
-        padding: 24px 16px 32px;
-      }
-
-      h1 {
-        font-size: 1.8rem;
-      }
-
-      h2 {
-        font-size: 1.25rem;
-      }
+      .wrapper { padding: 24px 16px 32px; }
+      h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.25rem; }
+      .preview-gallery img { width: 60px; height: 45px; }
     }
   </style>
 </head>
@@ -139,29 +169,19 @@
       <h2>🎮 Games</h2>
       <ul class="cards">
         <li class="card">
-          <div class="card-title">Memory Game 1 (Rezona) </div>
+          <div class="card-title">Memory Game 1 (Rezona)</div>
           <div class="card-meta">Browser game · Memory / matching</div>
           <a href="https://storage.googleapis.com/rezona-ai-prod/minigame/85748bce-80da-4f83-a91f-8d1dbdec245a/index.html" target="_blank" rel="noopener">
             Play game
           </a>
         </li>
-
         <li class="card">
-          <div class="card-title">The Train Game 2 (Rezona) </div>
-          <div class="card-meta">Browser game · Strategy </div>
+          <div class="card-title">The Train Game 2 (Rezona)</div>
+          <div class="card-meta">Browser game · Strategy</div>
           <a href="https://storage.googleapis.com/rezona-ai-prod/user_upload/game/version/latest-1a7c8ec3-563e-4cac-99e5-e1d403e99874.html" target="_blank" rel="noopener">
             Version 1
-    
-          
-          <a href="https://link-to-the-second-version-of-the-train-game" target="_blank" rel="noopener">
-          Version 2
-        
-          </a>
-                    </li>
           </a>
         </li>
-        
-
       </ul>
     </section>
 
@@ -171,71 +191,15 @@
         <li class="card">
           <div class="card-title">Blender Project</div>
           <div class="card-meta">3D model · Blender</div>
-          <a>
-            <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0000.jpg" alt="IMG-20260302-WA0000.jpg" >
-            <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0001.jpg" alt="IMG-20260302-WA0000.jpg" width="300"  height="200">
-            <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0002.jpg" alt="IMG-20260302-WA0000.jpg" width="300"  height="200">
-              <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0003.jpg" alt="IMG-20260302-WA0003.jpg" width="300"  height="200">
-            
-                     <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0004.jpg" alt="IMG-20260302-WA0004.jpg" width="300"  height="200">
-                    <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0005.jpg" alt="IMG-20260302-WA0005.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0006.jpg" alt="IMG-20260302-WA0006.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0007.jpg" alt="IMG-20260302-WA0007.jpg" width="300"  height="200">
-          
-            <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0008.jpg" alt="IMG-20260302-WA0008.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0009.jpg" alt="IMG-20260302-WA0009.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0010.jpg" alt="IMG-20260302-WA0010.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0011.jpg" alt="IMG-20260302-WA0011.jpg" width="300"  height="200">
-        
-            <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0012.jpg" alt="IMG-20260302-WA0012.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0013.jpg" alt="IMG-20260302-WA0013.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0014.jpg" alt="IMG-20260302-WA0014.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0015.jpg" alt="IMG-20260302-WA0015.jpg" width="300"  height="200">
-         
-            <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0016.jpg" alt="IMG-20260302-WA0016.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0017.jpg" alt="IMG-20260302-WA0017.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0018.jpg" alt="IMG-20260302-WA0018.jpg" width="300"  height="200">
-                  <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0019.jpg" alt="IMG-20260302-WA0019.jpg" width="300"  height="200">
-        
-            <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0020.jpg" alt="IMG-20260302-WA0020.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0021.jpg" alt="IMG-20260302-WA0021.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0022.jpg" alt="IMG-20260302-WA0022.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0023.jpg" alt="IMG-20260302-WA0023.jpg" width="300"  height="200">
-         
-            <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0024.jpg" alt="IMG-20260302-WA0024.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0025.jpg" alt="IMG-20260302-WA0025.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0026.jpg" alt="IMG-20260302-WA0026.jpg" width="300"  height="200">
-                  <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0027.jpg" alt="IMG-20260302-WA0027.jpg" width="300"  height="200">
-        
-            <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0028.jpg" alt="IMG-20260302-WA0028.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0029.jpg" alt="IMG-20260302-WA0029.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0030.jpg" alt="IMG-20260302-WA0030.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0031.jpg" alt="IMG-20260302-WA0031.jpg" width="300"  height="200">
-        
-            <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0032.jpg" alt="IMG-20260302-WA0032.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0033.jpg" alt="IMG-20260302-WA0033.jpg" width="300"  height="200">
-           <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0034.jpg" alt="IMG-20260302-WA0034.jpg" width="300"  height="200">
-        
-          
-          </a>
-            <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0000.jpg" alt="IMG-20260302-WA0000.jpg" width="300"  height="200">
-            <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0001.jpg" alt="IMG-20260302-WA0000.jpg" width="300"  height="200">
-          
-            <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0002.jpg" alt="IMG-20260302-WA0000.jpg" width="300"  height="200">
-          
-       
-        </li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Drawings</h2>
-      <ul class="cards">
-        <li class="card">
-          <div class="card-title">Projects</div>
-          <div class="card-meta"></div>
-          <a <img src="IMG-20260302-WA0000.jpg.jpg" alt="My photo" width="300" height="200">
-          </a>
+          <div class="preview-gallery">
+            <!-- Preview images 13,17,18,22,28 (smaller size) -->
+            <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0013.jpg" alt="Blender preview 13">
+            <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0017.jpg" alt="Blender preview 17">
+            <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0018.jpg" alt="Blender preview 18">
+            <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0022.jpg" alt="Blender preview 22">
+            <img src="https://raw.githubusercontent.com/Myrpin/My-page/main/IMG-20260302-WA0028.jpg" alt="Blender preview 28">
+          </div>
+          <a href="images.html" class="see-all-link">See all images →</a>
         </li>
       </ul>
     </section>
@@ -245,4 +209,4 @@
     </section>
   </div>
 </body>
-        </html>
+</html>
